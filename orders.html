@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MaintGrid Orders | Asset-linked work orders</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="page" data-page="orders">
+    <div id="site-header"></div>
+    <main>
+      <section class="page-hero">
+        <div class="wide-container page-hero-grid">
+          <div class="reveal">
+            <span class="eyebrow">MaintGrid Orders</span>
+            <h1>Work orders with the asset context built in.</h1>
+            <p class="lead">Plan, assign, approve, and complete maintenance work while every task stays connected to assets, parts, failure modes, and history.</p>
+            <a class="btn btn-primary btn-rocket" href="demo.html"><i data-lucide="rocket"></i> See MaintGrid Orders</a>
+          </div>
+          <div class="grid-surface cockpit reveal">
+            <div class="panel">
+              <div class="panel-header"><span>Work order queue</span><span class="status good">Ready</span></div>
+              <div class="panel-body work-list">
+                <div class="work-row"><div><strong>WO-1051 · Conveyor M-204</strong><span>Replace belt A-72 · service window 13:00</span></div><span class="status warn">Part wait</span></div>
+                <div class="work-row"><div><strong>WO-1056 · Sorter S-18</strong><span>Jam sensor calibration · owner Marta K.</span></div><span class="status good">Assigned</span></div>
+                <div class="work-row"><div><strong>WO-1060 · AHU-09</strong><span>Bearing inspection · vendor approval</span></div><span class="status info">Review</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container product-grid stagger">
+          <article class="feature-card"><div class="card-icon"><i data-lucide="list-checks"></i></div><h3>Prioritize before the shift starts.</h3><p>See open work by asset, urgency, risk, owner, and required parts before technicians are assigned.</p></article>
+          <article class="feature-card"><div class="card-icon"><i data-lucide="users"></i></div><h3>Give technicians the right context.</h3><p>Assign owners, add checklists, attach documents, and route approvals without losing the asset record.</p></article>
+          <article class="feature-card"><div class="card-icon"><i data-lucide="history"></i></div><h3>Every completion updates history.</h3><p>Capture time, parts used, failure mode, notes, photos, and follow-up actions in one asset timeline.</p></article>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container faq-grid">
+          <div class="reveal"><span class="eyebrow">Orders FAQ</span><h2>Work order questions, answered.</h2></div>
+          <div class="faq-list">
+            <div class="faq-item open"><button class="faq-question" type="button">What is a work order in MaintGrid? <i data-lucide="plus"></i></button><div class="faq-answer">A work order is a task connected to an asset, owner, priority, required parts, failure mode, timeline, and completion record.</div></div>
+            <div class="faq-item"><button class="faq-question" type="button">Can technicians use MaintGrid on mobile? <i data-lucide="plus"></i></button><div class="faq-answer">The interface is designed for web and mobile workflows, including shift handover and field completion states.</div></div>
+            <div class="faq-item"><button class="faq-question" type="button">Can work orders include parts and approvals? <i data-lucide="plus"></i></button><div class="faq-answer">Yes. Parts, approvals, checklists, and history are part of the work context instead of separate records.</div></div>
+          </div>
+        </div>
+      </section>
+      <section class="section"><div class="container"><div class="cta-banner reveal"><span class="eyebrow">Orders demo</span><h2>Plan the next maintenance shift with full context.</h2><p class="lead">See how MaintGrid Orders connects work, owners, parts, assets, and completion history.</p><a class="btn btn-primary" href="demo.html">Request demo</a></div></div></section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MaintGrid | Connected maintenance operations</title>
+    <meta name="description" content="MaintGrid connects work orders, spare parts, failures, asset history, and risk in one live maintenance grid for factories, warehouses, and facilities." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/styles.css?v=20260710-squarefix" />
+  </head>
+  <body class="page" data-page="home">
+    <div id="site-header"></div>
+
+    <main>
+      <section class="hero">
+        <div class="wide-container hero-grid">
+          <div>
+            <span class="eyebrow reveal">EU maintenance operations platform</span>
+            <h1 class="reveal">Connected maintenance operations, built for uptime.</h1>
+            <p class="lead reveal">MaintGrid connects work orders, spare parts, failures, asset history, and risk in one live operating grid, so maintenance teams can plan earlier, fix faster, and reduce reactive work.</p>
+            <div class="hero-actions reveal">
+              <a class="btn btn-primary btn-rocket" href="demo.html"><i data-lucide="rocket"></i> Request demo</a>
+              <a class="btn" href="#platform"><i data-lucide="layout-dashboard"></i> Explore the platform</a>
+            </div>
+            <div class="trust-cue stagger">
+              <div class="mini-stat"><strong>1</strong><span>shared view across assets, work, parts, and risk</span></div>
+              <div class="mini-stat"><strong>24h</strong><span>risk window for urgent maintenance planning</span></div>
+              <div class="mini-stat"><strong>EU</strong><span>built for European operations teams</span></div>
+            </div>
+          </div>
+
+          <div class="hero-visual grid-surface reveal" data-parallax>
+            <div class="dashboard">
+              <div class="dashboard-top">
+                <div class="traffic"><span></span><span></span><span></span></div>
+                <div class="dashboard-title">MaintGrid Operations Console / Warsaw site</div>
+              </div>
+              <div class="dashboard-body">
+                <div class="panel">
+                  <div class="panel-header"><span>Connected maintenance grid</span><span class="status good">Live</span></div>
+                  <div class="panel-body asset-map">
+                    <div class="map-line" style="left:22%;top:36%;width:48%;transform:rotate(16deg)"></div>
+                    <div class="map-line" style="left:31%;top:52%;width:40%;transform:rotate(-22deg)"></div>
+                    <div class="map-line" style="left:28%;top:68%;width:48%;transform:rotate(8deg)"></div>
+                    <div class="map-node node-pulse risk" style="left:8%;top:14%"><strong>Asset M-204</strong><span>Conveyor line</span></div>
+                    <div class="map-node warn" style="right:14%;top:24%"><strong>WO-1051</strong><span>Part wait</span></div>
+                    <div class="map-node good" style="left:30%;top:48%"><strong>Belt A-72</strong><span>2 in stock</span></div>
+                    <div class="map-node" style="right:8%;bottom:18%"><strong>Risk 87</strong><span>Today</span></div>
+                    <div class="map-node" style="left:12%;bottom:8%"><strong>History</strong><span>3 repeats</span></div>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header"><span>Today risk queue</span><span>6 assets</span></div>
+                  <div class="panel-body work-list">
+                    <div class="work-row"><div><strong>Conveyor M-204</strong><span>Belt drift repeated twice this quarter</span></div><span class="status risk">87</span></div>
+                    <div class="work-row"><div><strong>Sorter S-18</strong><span>Jam sensor delay before evening wave</span></div><span class="status warn">72</span></div>
+                    <div class="work-row"><div><strong>AHU-09</strong><span>Bearing vibration rising</span></div><span class="status info">64</span></div>
+                    <div class="work-row"><div><strong>Dock D-12</strong><span>Hydraulic seal due</span></div><span class="status good">42</span></div>
+                  </div>
+                  <div class="panel-body">
+                    <div class="chart-bars" aria-label="Maintenance performance chart">
+                      <span style="height:46%"></span><span style="height:62%"></span><span style="height:36%"></span><span style="height:78%"></span><span style="height:56%"></span><span style="height:88%"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-compact">
+        <div class="container">
+          <div class="section-header center reveal">
+            <span class="eyebrow">Trusted operating context</span>
+            <h2>Designed for the same environments as industrial leaders.</h2>
+            <p class="lead">Real industrial and logistics brand marks shown as operating-context references, not customer endorsements.</p>
+          </div>
+        </div>
+        <div class="marquee" aria-label="Industrial reference logos">
+          <div class="marquee-track">
+            <span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/siemens/9CA3AF" alt="Siemens logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/rockwellautomation/9CA3AF" alt="Rockwell Automation logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/schneiderelectric/9CA3AF" alt="Schneider Electric logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/abb/9CA3AF" alt="ABB logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/bosch/9CA3AF" alt="Bosch logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/caterpillar/9CA3AF" alt="Caterpillar logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/dhl/9CA3AF" alt="DHL logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/toyota/9CA3AF" alt="Toyota logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/ups/9CA3AF" alt="UPS logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/fedex/9CA3AF" alt="FedEx logo" /></span>
+            <span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/siemens/9CA3AF" alt="Siemens logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/rockwellautomation/9CA3AF" alt="Rockwell Automation logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/schneiderelectric/9CA3AF" alt="Schneider Electric logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/abb/9CA3AF" alt="ABB logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/bosch/9CA3AF" alt="Bosch logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/caterpillar/9CA3AF" alt="Caterpillar logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/dhl/9CA3AF" alt="DHL logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/toyota/9CA3AF" alt="Toyota logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/ups/9CA3AF" alt="UPS logo" /></span><span class="logo-tile logo-brand"><img src="https://cdn.simpleicons.org/fedex/9CA3AF" alt="FedEx logo" /></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Why teams stay reactive</span>
+            <h2>Maintenance breaks down when the data is split apart.</h2>
+            <p class="lead">Work orders sit in one place. Spare parts live in another. Failure notes disappear into messages or spreadsheets. Asset history is incomplete. By the time the team sees the pattern, downtime has already spread.</p>
+          </div>
+          <div class="story-grid stagger">
+            <article class="story-card"><div class="card-index">FIG 0.1</div><h3>Issue reported</h3><p>Conveyor M-204 stops during the morning shift.</p></article>
+            <article class="story-card"><div class="card-index">FIG 0.2</div><h3>Work order opened</h3><p>The technician sees the task, but not the full asset history.</p></article>
+            <article class="story-card"><div class="card-index">FIG 0.3</div><h3>Part unavailable</h3><p>The replacement belt exists in the system, but stock is wrong.</p></article>
+            <article class="story-card"><div class="card-index">FIG 0.4</div><h3>Pattern missed</h3><p>The same failure happened twice this quarter.</p></article>
+            <article class="story-card"><div class="card-index">FIG 0.5</div><h3>Risk increases</h3><p>Tomorrow's production plan depends on the same asset.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="platform">
+        <div class="wide-container split">
+          <div class="reveal">
+            <span class="eyebrow">The MaintGrid model</span>
+            <h2>One grid for work, parts, assets, failures, and risk.</h2>
+            <p class="lead">MaintGrid turns every maintenance event into connected operational context.</p>
+            <div class="work-list">
+              <div class="work-row"><div><strong>Every task is linked to the asset it affects.</strong><span>No work order floats without context.</span></div><span class="status good">Orders</span></div>
+              <div class="work-row"><div><strong>Every part is linked to the failures it protects.</strong><span>Lead time becomes a planning signal.</span></div><span class="status info">Parts</span></div>
+              <div class="work-row"><div><strong>Every pattern feeds risk and planning.</strong><span>Recurring issues become earlier decisions.</span></div><span class="status warn">Risk</span></div>
+            </div>
+          </div>
+          <div class="radial-wrap grid-surface reveal">
+            <div class="radial">
+              <span class="radial-ring"></span><span class="radial-ring"></span><span class="radial-ring"></span>
+              <div class="radial-center">MaintGrid</div>
+              <div class="radial-node">Asset</div>
+              <div class="radial-node">Work Order</div>
+              <div class="radial-node">Part</div>
+              <div class="radial-node">Failure Mode</div>
+              <div class="radial-node">Risk Score</div>
+              <div class="radial-node">Service Window</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center reveal">
+            <span class="eyebrow">Product suite</span>
+            <h2>Three products. One maintenance operating layer.</h2>
+          </div>
+          <div class="product-grid stagger">
+            <article class="feature-card">
+              <div class="card-icon"><i data-lucide="clipboard-list"></i></div>
+              <h3>MaintGrid Orders</h3>
+              <p>Prioritize, assign, approve, and close maintenance tasks while every action stays tied to assets, parts, and history.</p>
+              <a class="btn" href="orders.html">Explore Orders</a>
+            </article>
+            <article class="feature-card">
+              <div class="card-icon"><i data-lucide="activity"></i></div>
+              <h3>MaintGrid Risk</h3>
+              <p>Track criticality, recurring failures, safety exposure, and downtime risk before problems become interruptions.</p>
+              <a class="btn" href="risk.html">Explore Risk</a>
+            </article>
+            <article class="feature-card">
+              <div class="card-icon"><i data-lucide="boxes"></i></div>
+              <h3>MaintGrid Parts</h3>
+              <p>Track stock, vendors, lead times, part usage, and asset relationships so missing spares do not surprise the team.</p>
+              <a class="btn" href="parts.html">Explore Parts</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wide-container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Live context</span>
+            <h2>See every maintenance signal in context.</h2>
+            <p class="lead">Click through the operating views that turn disconnected maintenance activity into a connected decision system.</p>
+          </div>
+          <div class="feature-switcher">
+            <div class="switch-tabs stagger">
+              <button class="switch-tab active" data-switch="defect">Defect Issue <i data-lucide="arrow-right"></i></button>
+              <button class="switch-tab" data-switch="order">Work Order <i data-lucide="arrow-right"></i></button>
+              <button class="switch-tab" data-switch="parts">Parts Check <i data-lucide="arrow-right"></i></button>
+              <button class="switch-tab" data-switch="history">Asset History <i data-lucide="arrow-right"></i></button>
+              <button class="switch-tab" data-switch="risk">Risk Tracker <i data-lucide="arrow-right"></i></button>
+              <button class="switch-tab" data-switch="data">Performance Data <i data-lucide="arrow-right"></i></button>
+            </div>
+            <div class="switch-panel grid-surface" data-switch-panel>
+              <h3 data-switch-title></h3>
+              <p class="lead" data-switch-body></p>
+              <div class="switch-visual">
+                <div class="panel">
+                  <div class="panel-header"><span>Signal table</span><span class="status good">Live</span></div>
+                  <div class="panel-body">
+                    <table class="data-table">
+                      <thead><tr><th>Item</th><th>Detail</th><th>Status</th></tr></thead>
+                      <tbody data-switch-rows></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel">
+                  <div class="panel-header"><span>Trend</span><span>6 weeks</span></div>
+                  <div class="panel-body">
+                    <div class="chart-bars" data-switch-bars></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wide-container dashboard-strip">
+          <div class="cockpit grid-surface reveal">
+            <div class="cockpit-grid">
+              <div class="cockpit-card large"><h4>Today's risk queue</h4><div class="asset-map"><div class="map-node risk" style="left:4%;top:8%"><strong>M-204</strong><span>Risk 87</span></div><div class="map-node warn" style="right:10%;top:26%"><strong>S-18</strong><span>Risk 72</span></div><div class="map-node good" style="left:36%;bottom:10%"><strong>D-12</strong><span>Ready</span></div></div></div>
+              <div class="cockpit-card"><h4>Open work</h4><strong>42</strong><p class="status warn">8 critical</p></div>
+              <div class="cockpit-card"><h4>Parts at risk</h4><strong>13</strong><p class="status risk">Below reorder</p></div>
+              <div class="cockpit-card"><h4>MTTR review</h4><strong>3.8h</strong><p class="status good">Down 24%</p></div>
+              <div class="cockpit-card"><h4>Downtime exposure</h4><strong>€48k</strong><p class="status info">This week</p></div>
+            </div>
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">Product visual</span>
+            <h2>A maintenance cockpit your team can actually use.</h2>
+            <p class="lead">Built for daily standups, shift handovers, planning meetings, and maintenance reviews.</p>
+            <div class="timeline">
+              <div class="timeline-item"><strong>06:20</strong><span>Defect issue created from shift handover.</span></div>
+              <div class="timeline-item"><strong>06:35</strong><span>MaintGrid links similar M-204 incidents and part usage.</span></div>
+              <div class="timeline-item"><strong>07:10</strong><span>Parts risk checked before technician assignment.</span></div>
+              <div class="timeline-item"><strong>07:30</strong><span>Risk queue updates the production dependency window.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="factories">
+        <div class="container">
+          <div class="section-header center reveal">
+            <span class="eyebrow">Use cases</span>
+            <h2>Built for sites where downtime has a real cost.</h2>
+          </div>
+          <div class="use-grid stagger">
+            <article class="use-card motion-card">
+              <div class="use-visual factory-visual" aria-hidden="true">
+                <div class="mini-window">
+                  <span class="mini-label">Line A</span>
+                  <div class="mini-track"><span></span><span></span><span></span><span></span></div>
+                  <div class="mini-alert">Risk 87</div>
+                </div>
+              </div>
+              <h3>Factories</h3>
+              <p>Connect lines, machines, work orders, spare parts, and recurring defects so maintenance can protect production plans.</p>
+            </article>
+            <article class="use-card motion-card" id="warehouses">
+              <div class="use-visual warehouse-visual" aria-hidden="true">
+                <div class="mini-window">
+                  <div class="mini-route"><span></span><span></span><span></span><span></span></div>
+                  <div class="mini-row active"><b>Dock 12</b><em>Ready</em></div>
+                  <div class="mini-row"><b>Sorter 8</b><em>Watch</em></div>
+                </div>
+              </div>
+              <h3>Warehouses</h3>
+              <p>Track conveyors, forklifts, docks, sorters, and parts availability before small issues slow throughput.</p>
+            </article>
+            <article class="use-card motion-card" id="facilities">
+              <div class="use-visual facility-visual" aria-hidden="true">
+                <div class="mini-window">
+                  <div class="mini-system">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="mini-check">Vendor work linked</div>
+                </div>
+              </div>
+              <h3>Facilities</h3>
+              <p>Manage HVAC, lifts, fire systems, utilities, and vendor work with complete asset history.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="maintenance-teams">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Operational impact</span>
+            <h2>Turn maintenance data into earlier decisions.</h2>
+          </div>
+          <div class="metric-grid stagger">
+            <div class="metric-card motion-card">
+              <h3>35%</h3>
+              <p>fewer repeat defects flagged during planning</p>
+              <div class="impact-visual defect-visual" aria-hidden="true">
+                <span class="impact-node"></span><span class="impact-node"></span><span class="impact-node"></span>
+                <div class="scan-line"></div>
+              </div>
+            </div>
+            <div class="metric-card motion-card">
+              <h3>24%</h3>
+              <p>faster MTTR reviews after shift handover</p>
+              <div class="impact-visual mttr-visual" aria-hidden="true">
+                <span data-bar style="--h: 42%"></span><span data-bar style="--h: 58%"></span><span data-bar style="--h: 76%"></span><span data-bar style="--h: 54%"></span><span data-bar style="--h: 88%"></span>
+              </div>
+            </div>
+            <div class="metric-card motion-card">
+              <h3>18%</h3>
+              <p>fewer urgent part escalations</p>
+              <div class="impact-visual parts-visual" aria-hidden="true">
+                <div class="stock-card"><strong>Belt A-72</strong><span>2 in stock</span></div>
+                <div class="stock-card warn"><strong>PLC module</strong><span>9 day lead</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonial-section" data-testimonial>
+        <div class="container">
+          <div class="section-header center reveal">
+            <span class="eyebrow">Field notes</span>
+            <h2>Built around the way maintenance leaders actually work.</h2>
+          </div>
+          <div class="testimonial-shell">
+            <div class="testimonial-card-large">
+              <blockquote data-quote>The biggest change is context. We can see the work order, the part, the asset history, and the risk in one place before the shift starts.</blockquote>
+              <cite><strong data-name>Marek Nowak</strong> · <span data-role>Maintenance Manager, automotive supplier</span></cite>
+            </div>
+            <div class="testimonial-nav">
+              <button type="button" data-prev aria-label="Previous testimonial"><i data-lucide="chevron-left"></i></button>
+              <button type="button" data-next aria-label="Next testimonial"><i data-lucide="chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pricing-section" id="pricing">
+        <div class="wide-container">
+          <div class="pricing-shell" data-pricing>
+            <div class="pricing-stars"></div>
+            <div class="pricing-header">
+              <span class="eyebrow">Pricing</span>
+              <h2>Start with the maintenance layer your site needs now.</h2>
+              <p class="lead">Simple demo-led pricing for teams moving from reactive work to connected maintenance operations.</p>
+              <div class="billing-toggle" aria-label="Billing period">
+                <button class="active" type="button" data-billing="monthly">Monthly</button>
+                <button type="button" data-billing="yearly">Yearly</button>
+              </div>
+            </div>
+            <div class="pricing-grid">
+              <article class="price-card">
+                <h3>Starter</h3>
+                <div class="price"><span data-price>€890</span><span>/month</span></div>
+                <p>Single-site teams digitizing work orders and asset history.</p>
+                <a class="btn btn-inverse" href="demo.html">Request Starter demo</a>
+                <ul><li>MaintGrid Orders</li><li>Asset register</li><li>Work order queue</li><li>Basic parts tracking</li><li>Email support</li></ul>
+              </article>
+              <article class="price-card featured">
+                <h3>Operations</h3>
+                <div class="price"><span data-price>€1,900</span><span>/month</span></div>
+                <p>Multi-team operations connecting work, parts, and risk.</p>
+                <a class="btn btn-primary" href="demo.html">Request Operations demo</a>
+                <ul><li>Orders, Risk, and Parts</li><li>Multi-site dashboards</li><li>Parts lead time tracking</li><li>Risk queue</li><li>Priority support</li></ul>
+              </article>
+              <article class="price-card">
+                <h3>Enterprise</h3>
+                <div class="price"><span data-price>Custom</span><span></span></div>
+                <p>Industrial groups with integrations and governance needs.</p>
+                <a class="btn btn-inverse" href="contact.html">Contact sales</a>
+                <ul><li>Advanced permissions</li><li>ERP/WMS integration planning</li><li>SSO</li><li>Audit support</li><li>Dedicated onboarding</li></ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container faq-grid">
+          <div class="reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2>Questions maintenance leaders ask before switching.</h2>
+            <p class="lead">Clear answers for teams evaluating connected maintenance operations.</p>
+            <a class="btn btn-primary" href="demo.html">Ask in a demo</a>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item open"><button class="faq-question" type="button">How is MaintGrid different from a normal CMMS? <i data-lucide="plus"></i></button><div class="faq-answer">MaintGrid is built around connected maintenance data. Work orders, parts, failures, risk, and asset history are linked so teams can understand what happened, what is needed, and what risk comes next.</div></div>
+            <div class="faq-item"><button class="faq-question" type="button">Can MaintGrid replace spreadsheets? <i data-lucide="plus"></i></button><div class="faq-answer">Yes. Teams can start by moving work orders, assets, spare parts, and recurring issue logs into MaintGrid, then expand into risk tracking and integrations.</div></div>
+            <div class="faq-item"><button class="faq-question" type="button">Do we need sensors or IoT data? <i data-lucide="plus"></i></button><div class="faq-answer">No. MaintGrid Risk can start with work history, failure records, asset criticality, part availability, and downtime impact. Sensor data can be added later.</div></div>
+            <div class="faq-item"><button class="faq-question" type="button">Can MaintGrid connect with ERP or WMS tools? <i data-lucide="plus"></i></button><div class="faq-answer">MaintGrid is designed for integration planning with ERP, WMS, and existing operational systems as teams mature beyond spreadsheets.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-banner reveal">
+            <span class="eyebrow">See the grid</span>
+            <h2>Bring your maintenance work, parts, and risk into one view.</h2>
+            <p class="lead">Book a MaintGrid walkthrough and see how connected maintenance operations can work across your assets, teams, and sites.</p>
+            <div class="section-actions">
+              <a class="btn btn-primary btn-rocket" href="demo.html"><i data-lucide="rocket"></i> Request demo</a>
+              <a class="btn" href="contact.html">Contact sales</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

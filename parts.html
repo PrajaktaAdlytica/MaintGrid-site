@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MaintGrid Parts | Connected spare parts planning</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="page" data-page="parts">
+    <div id="site-header"></div>
+    <main>
+      <section class="page-hero">
+        <div class="wide-container page-hero-grid">
+          <div class="reveal"><span class="eyebrow">MaintGrid Parts</span><h1>Spare parts connected to the assets they protect.</h1><p class="lead">Track stock, vendors, lead times, usage, and asset relationships so missing parts do not turn small failures into downtime.</p><a class="btn btn-primary btn-rocket" href="demo.html"><i data-lucide="rocket"></i> See MaintGrid Parts</a></div>
+          <div class="grid-surface cockpit reveal">
+            <div class="panel"><div class="panel-header"><span>Parts stock table</span><span class="status warn">3 alerts</span></div><div class="panel-body"><table class="data-table"><thead><tr><th>Part</th><th>Stock</th><th>Lead time</th></tr></thead><tbody><tr><td>Drive belt A-72</td><td>2</td><td><span class="status risk">Critical</span></td></tr><tr><td>Bearing 6205</td><td>18</td><td><span class="status good">Ready</span></td></tr><tr><td>PLC module</td><td>1</td><td><span class="status warn">9 days</span></td></tr></tbody></table></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="section"><div class="container product-grid stagger"><article class="feature-card"><div class="card-icon"><i data-lucide="warehouse"></i></div><h3>Know what is available before the job starts.</h3><p>Track stock levels, reserved parts, reorder points, vendors, and lead times.</p></article><article class="feature-card"><div class="card-icon"><i data-lucide="network"></i></div><h3>See which assets depend on each part.</h3><p>Connect every part to assets, work orders, failure modes, and service plans.</p></article><article class="feature-card"><div class="card-icon"><i data-lucide="triangle-alert"></i></div><h3>Find part risk before it blocks maintenance.</h3><p>Flag low stock and long lead times for critical assets before the service window arrives.</p></article></div></section>
+      <section class="section"><div class="container faq-grid"><div class="reveal"><span class="eyebrow">Parts FAQ</span><h2>Parts planning with asset context.</h2></div><div class="faq-list"><div class="faq-item open"><button class="faq-question" type="button">Can MaintGrid track spare parts by site? <i data-lucide="plus"></i></button><div class="faq-answer">Yes. Parts can be tracked by site, asset relationship, stock level, reorder point, and vendor lead time.</div></div><div class="faq-item"><button class="faq-question" type="button">Can parts be linked to assets? <i data-lucide="plus"></i></button><div class="faq-answer">Every part can be connected to the assets, failure modes, and work orders it supports.</div></div><div class="faq-item"><button class="faq-question" type="button">Can we import parts from spreadsheets? <i data-lucide="plus"></i></button><div class="faq-answer">Teams can start from spreadsheet-based part lists and then clean the data into connected records.</div></div></div></div></section>
+      <section class="section"><div class="container"><div class="cta-banner reveal"><span class="eyebrow">Parts demo</span><h2>Stop discovering missing parts after the asset fails.</h2><p class="lead">See how MaintGrid Parts connects spares, vendors, assets, failures, and planned work.</p><a class="btn btn-primary" href="demo.html">Request demo</a></div></div></section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="js/main.js"></script>
+  </body>
+</html>
