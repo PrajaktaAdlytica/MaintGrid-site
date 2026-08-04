@@ -12,6 +12,13 @@ const solutions = [
   ["index.html#maintenance-teams", "hard-hat", "Maintenance Teams", "Give planners and technicians one shared context."]
 ];
 
+const siteRoot = document.body.dataset.root || "";
+
+function localHref(href) {
+  if (/^(?:https?:|mailto:|tel:|#)/.test(href)) return href;
+  return `${siteRoot}${href}`;
+}
+
 function icon(name) {
   return `<i data-lucide="${name}" aria-hidden="true"></i>`;
 }
@@ -21,7 +28,7 @@ function dropdown(items, eyebrow) {
     <div class="dropdown" role="menu">
       <div class="dropdown-eyebrow">${eyebrow}</div>
       ${items.map(([href, iconName, title, desc]) => `
-        <a href="${href}" role="menuitem">
+        <a href="${localHref(href)}" role="menuitem">
           <i>${icon(iconName)}</i>
           <span><strong>${title}</strong><span>${desc}</span></span>
         </a>
@@ -37,8 +44,8 @@ function injectHeader() {
   mount.innerHTML = `
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="index.html" aria-label="MaintGrid home">
-          <img class="brand-mark" src="assets/logo-icon.svg" alt="" />
+        <a class="brand" href="${localHref("index.html")}" aria-label="MaintGrid home">
+          <img class="brand-mark" src="${localHref("assets/logo-icon.svg")}" alt="" />
           <span>MaintGrid</span>
         </a>
         <div class="nav-links">
@@ -50,13 +57,15 @@ function injectHeader() {
             <button class="nav-trigger" type="button">Solutions ${icon("chevron-down")}</button>
             ${dropdown(solutions, "Built for equipment-heavy operations")}
           </div>
-          <a class="nav-link ${page === "pricing" ? "active" : ""}" href="pricing.html">Pricing</a>
-          <a class="nav-link ${page === "about" ? "active" : ""}" href="about.html">About</a>
-          <a class="nav-link ${page === "contact" ? "active" : ""}" href="contact.html">Contact</a>
+          <a class="nav-link ${page === "pricing" ? "active" : ""}" href="${localHref("pricing.html")}">Pricing</a>
+          <a class="nav-link ${page === "news" ? "active" : ""}" href="${localHref("news/funding-announcement.html")}">News</a>
+          <a class="nav-link ${page === "about" ? "active" : ""}" href="${localHref("about.html")}">About</a>
+          <a class="nav-link ${page === "contact" ? "active" : ""}" href="${localHref("contact.html")}">Contact</a>
         </div>
         <div class="nav-actions">
-          <a class="btn" href="signin.html">${icon("log-in")} Sign In</a>
-          <a class="btn btn-primary" href="demo.html">${icon("rocket")} Demo</a>
+          <a class="btn nav-news-compact ${page === "news" ? "active" : ""}" href="${localHref("news/funding-announcement.html")}">News</a>
+          <a class="btn" href="${localHref("signin.html")}">${icon("log-in")} Sign In</a>
+          <a class="btn btn-primary" href="${localHref("demo.html")}">${icon("rocket")} Demo</a>
         </div>
       </nav>
     </header>
@@ -71,48 +80,52 @@ function injectFooter() {
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a class="brand" href="index.html">
-              <img class="brand-mark" src="assets/logo-icon.svg" alt="" />
+            <a class="brand" href="${localHref("index.html")}">
+              <img class="brand-mark" src="${localHref("assets/logo-icon.svg")}" alt="" />
               <span>MaintGrid</span>
             </a>
             <p>Connected maintenance operations for factories, warehouses, and facilities. MaintGrid links work orders, parts, failures, and asset history so teams can reduce reactive maintenance.</p>
             <p>MaintGrid Sp. z o.o.<br>Warsaw, Poland<br>hello@maintgrid.com<br>sales@maintgrid.com<br>Mon-Fri, 09:00-18:00 CET</p>
+            <div class="footer-credibility" aria-label="Company funding record">
+              <span>${icon("badge-check")} Backed by Dlabs</span>
+              <strong>$555K funding</strong>
+              <a href="https://d-labs-site.vercel.app/companies" target="_blank" rel="noreferrer noopener">Dlabs portfolio ${icon("arrow-up-right")}</a>
+            </div>
             <div class="socials">
-              <a href="https://www.linkedin.com" aria-label="LinkedIn">${icon("linkedin")}</a>
-              <a href="https://x.com" aria-label="X">${icon("twitter")}</a>
-              <a href="https://www.youtube.com" aria-label="YouTube">${icon("youtube")}</a>
-              <a href="https://github.com" aria-label="GitHub">${icon("github")}</a>
+              <a href="https://www.linkedin.com/company/maintgrid/" target="_blank" rel="noreferrer noopener" aria-label="MaintGrid on LinkedIn">${icon("link")}</a>
+              <a href="https://www.crunchbase.com/organization/maintgrid" target="_blank" rel="noreferrer noopener" aria-label="MaintGrid on Crunchbase">${icon("database")}</a>
             </div>
           </div>
           <div class="footer-col">
             <h4>Product</h4>
-            <a href="orders.html">MaintGrid Orders</a>
-            <a href="risk.html">MaintGrid Risk</a>
-            <a href="parts.html">MaintGrid Parts</a>
-            <a href="index.html#platform">Platform</a>
-            <a href="pricing.html">Pricing</a>
+            <a href="${localHref("orders.html")}">MaintGrid Orders</a>
+            <a href="${localHref("risk.html")}">MaintGrid Risk</a>
+            <a href="${localHref("parts.html")}">MaintGrid Parts</a>
+            <a href="${localHref("index.html#platform")}">Platform</a>
+            <a href="${localHref("pricing.html")}">Pricing</a>
           </div>
           <div class="footer-col">
             <h4>Solutions</h4>
-            <a href="index.html#factories">Factories</a>
-            <a href="index.html#warehouses">Warehouses</a>
-            <a href="index.html#facilities">Facilities</a>
-            <a href="index.html#maintenance-teams">Maintenance Teams</a>
-            <a href="parts.html">Spare Parts Teams</a>
+            <a href="${localHref("index.html#factories")}">Factories</a>
+            <a href="${localHref("index.html#warehouses")}">Warehouses</a>
+            <a href="${localHref("index.html#facilities")}">Facilities</a>
+            <a href="${localHref("index.html#maintenance-teams")}">Maintenance Teams</a>
+            <a href="${localHref("parts.html")}">Spare Parts Teams</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="demo.html">Request Demo</a>
-            <a href="signin.html">Sign In</a>
+            <a href="${localHref("about.html")}">About</a>
+            <a href="${localHref("news/funding-announcement.html")}">Funding announcement</a>
+            <a href="${localHref("contact.html")}">Contact</a>
+            <a href="${localHref("demo.html")}">Request Demo</a>
+            <a href="${localHref("signin.html")}">Sign In</a>
           </div>
           <div class="footer-col">
             <h4>Legal</h4>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="security.html">Security</a>
-            <a href="dpa.html">Data Processing</a>
+            <a href="${localHref("privacy.html")}">Privacy</a>
+            <a href="${localHref("terms.html")}">Terms</a>
+            <a href="${localHref("security.html")}">Security</a>
+            <a href="${localHref("dpa.html")}">Data Processing</a>
           </div>
         </div>
         <div class="footer-bottom">
