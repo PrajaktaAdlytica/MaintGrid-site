@@ -306,7 +306,6 @@ body.entry-view .site-header {
   z-index: -4;
   object-fit: cover;
   opacity: 0;
-  transform: scale(1.01);
   transition: opacity 900ms var(--ease-out);
 }
 

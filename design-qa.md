@@ -22,7 +22,7 @@ Viewport and normalization:
 - Typography: existing Space Grotesk and Inter brand pair is preserved. Headline, time labels, and compact operational labels maintain the target hierarchy without introducing a third font.
 - Spacing and layout: full-viewport framing, left routine rail, right evidence panel, persistent controls, and bottom progress line match the source composition. No horizontal overflow was detected at desktop or mobile.
 - Colors and tokens: MaintGrid charcoal, lime, and cyan tokens are used consistently. Active, pending, live, and data states remain distinguishable with sufficient contrast.
-- Image quality: four purpose-built 16:9 industrial assets were converted to optimized MP4 motion backgrounds. Crops preserve interface space on the left and operational subjects on the right.
+- Image quality: four purpose-built 16:9 industrial scenes use stable WebP backgrounds with controlled crossfades. Crops preserve interface space on the left and operational subjects on the right without video-decoder shimmer.
 - Copy: all operational steps, timestamps, evidence, and status text are specific to MaintGrid's asset, work-order, parts, and risk model.
 - Interaction: autoplay, cumulative toggle activation, manual state selection, pause/play, skip, final CTA, reduced-motion behavior, and handoff to the unchanged homepage hero were verified.
 - Console and assets: no browser warnings or errors; all entry PNG and MP4 requests returned 200/304.
@@ -35,7 +35,7 @@ Focused region evidence:
 **Comparison History**
 - P2 mobile viewport gap: the first mobile capture left 24 px below the 820 px intro. Fixed with `max(820px, 100svh)` on the entry and its layout. Post-fix evidence shows an 844 px entry in an 844 px viewport.
 - P2 manual-state drift: autoplay could restart while the manually selected row retained focus. Fixed by holding manual selections and switching the sequence control to Play while the active background video continues. The final state remained stable after five seconds.
-- P1 background loop reset: the original one-way camera zoom jumped back to its first frame every eight seconds and was amplified by a second CSS scale animation. Replaced with a centered periodic motion whose first and last frames differ by 1.26 mean pixel levels, removed the competing CSS transform, and verified the same active clip across a complete browser loop with no console warnings.
+- P1 background instability: artificial camera motion and video compression caused visible edge jitter on detailed machinery, including after the first loop correction. Replaced all four video layers with stable WebP scenes, removed every media transform and video-decoder dependency, and retained motion only in the clean crossfade between operational states.
 
 **Follow-up Polish**
 - P3: real sensor-driven connector traces could be added later when live product telemetry is available; the current motion focuses on the operational sequence and evidence changes.

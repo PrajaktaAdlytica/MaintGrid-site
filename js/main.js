@@ -388,15 +388,8 @@ function setupEntrySequence() {
   };
 
   function syncMedia(index) {
-    media.forEach((video, videoIndex) => {
-      const isActive = videoIndex === index;
-      video.classList.toggle("active", isActive);
-      if (!isActive || document.hidden || reducedMotion) {
-        video.pause();
-        return;
-      }
-      if (video.currentTime > 7.7) video.currentTime = 0;
-      video.play().catch(() => {});
+    media.forEach((item, itemIndex) => {
+      item.classList.toggle("active", itemIndex === index);
     });
   }
 
@@ -454,7 +447,6 @@ function setupEntrySequence() {
     if (paused) {
       window.clearTimeout(timer);
     } else {
-      syncMedia(active);
       schedule(700);
     }
   });
@@ -464,7 +456,6 @@ function setupEntrySequence() {
       event.preventDefault();
       document.body.classList.remove("entry-view");
       window.clearTimeout(timer);
-      media.forEach((video) => video.pause());
       document.querySelector("#home-hero")?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
     });
   });
@@ -472,20 +463,13 @@ function setupEntrySequence() {
   const observer = new IntersectionObserver(([entry]) => {
     const entryVisible = entry.isIntersecting && entry.intersectionRatio > 0.35;
     document.body.classList.toggle("entry-view", entryVisible);
-    if (!entryVisible) {
-      media.forEach((video) => video.pause());
-    } else {
-      syncMedia(active);
-    }
   }, { threshold: [0, 0.35, 0.6] });
   observer.observe(root);
 
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       window.clearTimeout(timer);
-      media.forEach((video) => video.pause());
     } else if (!paused) {
-      syncMedia(active);
       schedule(1000);
     }
   });
