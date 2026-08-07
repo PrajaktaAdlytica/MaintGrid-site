@@ -323,6 +323,182 @@ function setupTestimonials() {
   }
 }
 
+function setupEntrySequence() {
+  const root = document.querySelector("[data-entry-sequence]");
+  if (!root) return;
+
+  const scenes = [
+    {
+      asset: "MOTOR M-204",
+      status: "Inspecting vibration",
+      detail: "Signal is linked to the asset record and current shift.",
+      metricLabel: "Vibration",
+      metric: "2.8 mm/s",
+      context: "Asset history",
+      caption: "Asset signal connected"
+    },
+    {
+      asset: "WO-1051",
+      status: "Work order created",
+      detail: "Priority, service window, and technician are connected.",
+      metricLabel: "Priority",
+      metric: "Critical",
+      context: "Marta K.",
+      caption: "Owner and service window connected"
+    },
+    {
+      asset: "PART 6205",
+      status: "Critical part reserved",
+      detail: "Stock, location, and asset dependency are confirmed.",
+      metricLabel: "Available",
+      metric: "18 units",
+      context: "Bin B-14",
+      caption: "Part availability connected"
+    },
+    {
+      asset: "LINE A",
+      status: "Production risk updated",
+      detail: "The maintenance plan now protects the next shift.",
+      metricLabel: "Risk score",
+      metric: "87 → 28",
+      context: "Shift ready",
+      caption: "Operational risk connected"
+    }
+  ];
+
+  const steps = [...root.querySelectorAll("[data-entry-step]")];
+  const media = [...root.querySelectorAll("[data-entry-media]")];
+  const pauseButton = root.querySelector("[data-entry-pause]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let active = 0;
+  let paused = reducedMotion;
+  let completed = false;
+  let timer;
+
+  const fields = {
+    count: root.querySelector("[data-entry-count]"),
+    asset: root.querySelector("[data-entry-asset]"),
+    status: root.querySelector("[data-entry-status]"),
+    detail: root.querySelector("[data-entry-detail]"),
+    metricLabel: root.querySelector("[data-entry-metric-label]"),
+    metric: root.querySelector("[data-entry-metric]"),
+    context: root.querySelector("[data-entry-context]"),
+    caption: root.querySelector("[data-entry-caption]"),
+    progress: root.querySelector("[data-entry-progress]")
+  };
+
+  function syncMedia(index) {
+    media.forEach((video, videoIndex) => {
+      const isActive = videoIndex === index;
+      video.classList.toggle("active", isActive);
+      if (!isActive || document.hidden || reducedMotion) {
+        video.pause();
+        return;
+      }
+      if (video.currentTime > 7.7) video.currentTime = 0;
+      video.play().catch(() => {});
+    });
+  }
+
+  function applyState(index) {
+    active = (index + scenes.length) % scenes.length;
+    const scene = scenes[active];
+
+    steps.forEach((step, stepIndex) => {
+      const isOn = stepIndex <= active;
+      step.classList.toggle("is-on", isOn);
+      step.classList.toggle("active", stepIndex === active);
+      step.setAttribute("aria-pressed", String(isOn));
+    });
+
+    fields.count.textContent = String(active + 1).padStart(2, "0");
+    fields.asset.textContent = scene.asset;
+    fields.status.textContent = scene.status;
+    fields.detail.textContent = scene.detail;
+    fields.metricLabel.textContent = scene.metricLabel;
+    fields.metric.textContent = scene.metric;
+    fields.context.textContent = scene.context;
+    fields.caption.textContent = scene.caption;
+    fields.progress.style.width = `${((active + 1) / scenes.length) * 100}%`;
+
+    if (active === scenes.length - 1) completed = true;
+    root.classList.toggle("is-complete", completed);
+    syncMedia(active);
+  }
+
+  function schedule(delay = 2700) {
+    window.clearTimeout(timer);
+    if (paused || reducedMotion) return;
+    timer = window.setTimeout(() => {
+      applyState(active === scenes.length - 1 ? 0 : active + 1);
+      schedule(active === scenes.length - 1 ? 4300 : 2700);
+    }, delay);
+  }
+
+  steps.forEach((step) => {
+    step.addEventListener("click", () => {
+      paused = true;
+      window.clearTimeout(timer);
+      pauseButton.classList.add("paused");
+      pauseButton.setAttribute("aria-label", "Play sequence");
+      pauseButton.setAttribute("title", "Play sequence");
+      applyState(Number(step.dataset.entryStep));
+    });
+  });
+
+  pauseButton.addEventListener("click", () => {
+    paused = !paused;
+    pauseButton.classList.toggle("paused", paused);
+    pauseButton.setAttribute("aria-label", paused ? "Play sequence" : "Pause sequence");
+    pauseButton.setAttribute("title", paused ? "Play sequence" : "Pause sequence");
+    if (paused) {
+      window.clearTimeout(timer);
+    } else {
+      syncMedia(active);
+      schedule(700);
+    }
+  });
+
+  root.querySelectorAll("[data-entry-exit]").forEach((control) => {
+    control.addEventListener("click", (event) => {
+      event.preventDefault();
+      document.body.classList.remove("entry-view");
+      window.clearTimeout(timer);
+      media.forEach((video) => video.pause());
+      document.querySelector("#home-hero")?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
+    });
+  });
+
+  const observer = new IntersectionObserver(([entry]) => {
+    const entryVisible = entry.isIntersecting && entry.intersectionRatio > 0.35;
+    document.body.classList.toggle("entry-view", entryVisible);
+    if (!entryVisible) {
+      media.forEach((video) => video.pause());
+    } else {
+      syncMedia(active);
+    }
+  }, { threshold: [0, 0.35, 0.6] });
+  observer.observe(root);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      window.clearTimeout(timer);
+      media.forEach((video) => video.pause());
+    } else if (!paused) {
+      syncMedia(active);
+      schedule(1000);
+    }
+  });
+
+  if (window.location.hash && window.location.hash !== "#top") {
+    document.body.classList.remove("entry-view");
+  }
+
+  applyState(0);
+  pauseButton.classList.toggle("paused", paused);
+  schedule();
+}
+
 function setupGSAP() {
   if (!window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
@@ -431,6 +607,7 @@ function setupGSAP() {
 document.addEventListener("DOMContentLoaded", () => {
   injectHeader();
   injectFooter();
+  setupEntrySequence();
   setupDropdowns();
   setupSwitcher();
   setupPricingToggle();

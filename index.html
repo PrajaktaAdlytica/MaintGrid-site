@@ -23,13 +23,83 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tokens.css" />
-    <link rel="stylesheet" href="css/styles.css?v=20260804-funding" />
+    <link rel="stylesheet" href="css/styles.css?v=20260807-entry" />
   </head>
-  <body class="page" data-page="home">
+  <body class="page entry-view" data-page="home">
     <div id="site-header"></div>
 
     <main>
-      <section class="hero">
+      <section class="entry-sequence" data-entry-sequence aria-label="MaintGrid connected maintenance sequence">
+        <div class="entry-media-stack" aria-hidden="true">
+          <video class="entry-media active" data-entry-media="0" autoplay muted loop playsinline preload="auto" poster="assets/entry/inspect.webp" src="assets/entry/inspect.mp4"></video>
+          <video class="entry-media" data-entry-media="1" autoplay muted loop playsinline preload="metadata" poster="assets/entry/order.webp" src="assets/entry/order.mp4"></video>
+          <video class="entry-media" data-entry-media="2" autoplay muted loop playsinline preload="metadata" poster="assets/entry/parts.webp" src="assets/entry/parts.mp4"></video>
+          <video class="entry-media" data-entry-media="3" autoplay muted loop playsinline preload="metadata" poster="assets/entry/risk.webp" src="assets/entry/risk.mp4"></video>
+        </div>
+        <div class="entry-shade" aria-hidden="true"></div>
+
+        <div class="entry-topbar">
+          <a class="entry-brand" href="#home-hero" data-entry-exit aria-label="Enter MaintGrid homepage">
+            <img src="assets/logo.svg" alt="MaintGrid" />
+          </a>
+          <div class="entry-top-actions">
+            <button class="entry-icon-btn" type="button" data-entry-pause aria-label="Pause sequence" title="Pause sequence"><i class="entry-pause-icon" data-lucide="pause"></i><i class="entry-play-icon" data-lucide="play"></i></button>
+            <button class="entry-skip" type="button" data-entry-exit>Skip sequence <i data-lucide="arrow-down"></i></button>
+          </div>
+        </div>
+
+        <div class="entry-layout">
+          <div class="entry-copy">
+            <span class="entry-kicker"><span data-entry-count>01</span> / 04 &nbsp; Connected maintenance sequence</span>
+            <h1>Turn every signal<br />into the next action.</h1>
+
+            <div class="entry-routine" role="group" aria-label="Maintenance operations sequence">
+              <button class="entry-step active" type="button" data-entry-step="0" aria-pressed="true">
+                <span class="entry-step-icon"><i data-lucide="scan-search"></i></span>
+                <span class="entry-time">06:20</span>
+                <span class="entry-step-copy"><strong>Inspect asset</strong><small>Vibration signal received</small></span>
+                <span class="entry-toggle" aria-hidden="true"><span></span></span>
+              </button>
+              <button class="entry-step" type="button" data-entry-step="1" aria-pressed="false">
+                <span class="entry-step-icon"><i data-lucide="clipboard-check"></i></span>
+                <span class="entry-time">06:35</span>
+                <span class="entry-step-copy"><strong>Create work order</strong><small>Priority and owner connected</small></span>
+                <span class="entry-toggle" aria-hidden="true"><span></span></span>
+              </button>
+              <button class="entry-step" type="button" data-entry-step="2" aria-pressed="false">
+                <span class="entry-step-icon"><i data-lucide="package-check"></i></span>
+                <span class="entry-time">06:50</span>
+                <span class="entry-step-copy"><strong>Reserve critical part</strong><small>Bearing 6205 confirmed</small></span>
+                <span class="entry-toggle" aria-hidden="true"><span></span></span>
+              </button>
+              <button class="entry-step" type="button" data-entry-step="3" aria-pressed="false">
+                <span class="entry-step-icon"><i data-lucide="shield-check"></i></span>
+                <span class="entry-time">07:10</span>
+                <span class="entry-step-copy"><strong>Update production risk</strong><small>Next shift protected</small></span>
+                <span class="entry-toggle" aria-hidden="true"><span></span></span>
+              </button>
+            </div>
+          </div>
+
+          <aside class="entry-signal" aria-live="polite">
+            <div class="entry-signal-head"><span data-entry-asset>MOTOR M-204</span><span class="entry-live">Live</span></div>
+            <strong data-entry-status>Inspecting vibration</strong>
+            <p data-entry-detail>Signal is linked to the asset record and current shift.</p>
+            <div class="entry-metrics">
+              <div><span data-entry-metric-label>Vibration</span><strong data-entry-metric>2.8 mm/s</strong></div>
+              <div><span>Context</span><strong data-entry-context>Asset history</strong></div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="entry-footer">
+          <div class="entry-progress" aria-hidden="true"><span data-entry-progress></span></div>
+          <span class="entry-caption" data-entry-caption>Asset signal connected</span>
+          <a class="entry-enter" href="#home-hero" data-entry-exit>Enter MaintGrid <i data-lucide="arrow-down-right"></i></a>
+        </div>
+      </section>
+
+      <section class="hero" id="home-hero">
         <div class="wide-container hero-grid">
           <div>
             <span class="eyebrow reveal">EU maintenance operations platform</span>
