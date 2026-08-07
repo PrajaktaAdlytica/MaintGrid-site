@@ -35,6 +35,7 @@ Focused region evidence:
 **Comparison History**
 - P2 mobile viewport gap: the first mobile capture left 24 px below the 820 px intro. Fixed with `max(820px, 100svh)` on the entry and its layout. Post-fix evidence shows an 844 px entry in an 844 px viewport.
 - P2 manual-state drift: autoplay could restart while the manually selected row retained focus. Fixed by holding manual selections and switching the sequence control to Play while the active background video continues. The final state remained stable after five seconds.
+- P1 background loop reset: the original one-way camera zoom jumped back to its first frame every eight seconds and was amplified by a second CSS scale animation. Replaced with a centered periodic motion whose first and last frames differ by 1.26 mean pixel levels, removed the competing CSS transform, and verified the same active clip across a complete browser loop with no console warnings.
 
 **Follow-up Polish**
 - P3: real sensor-driven connector traces could be added later when live product telemetry is available; the current motion focuses on the operational sequence and evidence changes.
