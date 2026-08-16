@@ -586,7 +586,10 @@ Form can be frontend-only but should show success state.
 Include credible EU/Poland company details:
 
 - MaintGrid Sp. z o.o.
-- Warsaw, Poland
+- 5249 Charles Lane
+- Limassol, LIM 3012
+- Cyprus
+- Phone: 19 268701
 - hello@maintgrid.com
 - sales@maintgrid.com
 - EU operating hours

@@ -81,7 +81,10 @@ Footer columns:
 Contact details:
 
 - MaintGrid Sp. z o.o.
-- Warsaw, Poland
+- 5249 Charles Lane
+- Limassol, LIM 3012
+- Cyprus
+- Phone: 19 268701
 - hello@maintgrid.com
 - sales@maintgrid.com
 - EU support hours: Mon-Fri, 09:00-18:00 CET
@@ -698,7 +701,8 @@ Contact cards:
 
 - Sales: sales@maintgrid.com
 - General: hello@maintgrid.com
-- Office: MaintGrid Sp. z o.o., Warsaw, Poland
+- Office: 5249 Charles Lane, Limassol, LIM 3012, Cyprus
+- Phone: 19 268701
 - Hours: Mon-Fri, 09:00-18:00 CET
 
 Contact form fields:
