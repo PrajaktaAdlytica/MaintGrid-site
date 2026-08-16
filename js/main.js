@@ -84,7 +84,6 @@ function injectFooter() {
               <img class="brand-mark" src="${localHref("assets/logo-icon.svg")}" alt="" />
               <span>MaintGrid</span>
             </a>
-            <p>Connected maintenance operations for factories, warehouses, and facilities. MaintGrid links work orders, parts, failures, and asset history so teams can reduce reactive maintenance.</p>
             <p>5249 Charles Lane<br>Limassol, LIM 3012<br>Cyprus<br>Phone: 19 268701<br>hello@maintgrid.com<br>sales@maintgrid.com<br>Mon-Fri, 09:00-18:00 CET</p>
             <div class="footer-credibility" aria-label="Company funding record">
               <span>${icon("badge-check")} Backed by Dlabs</span>
