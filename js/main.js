@@ -84,7 +84,7 @@ function injectFooter() {
               <img class="brand-mark" src="${localHref("assets/logo-icon.svg")}" alt="" />
               <span>MaintGrid</span>
             </a>
-            <p>5249 Charles Lane<br>Limassol, LIM 3012<br>Cyprus<br>Phone: 19 268701<br>hello@maintgrid.com<br>sales@maintgrid.com<br>Mon-Fri, 09:00-18:00 CET</p>
+            <p>6003 Magnolia Lane<br>Cedar Rapids, IA 52403<br>United States<br>Lat: 41.9781, Lng: -91.671<br>Phone: (319) 515-8678<br>hello@maintgrid.com<br>sales@maintgrid.com<br>Mon-Fri, 09:00-18:00 CET</p>
             <div class="footer-credibility" aria-label="Company funding record">
               <span>${icon("badge-check")} Backed by Dlabs</span>
               <strong>$555K funding</strong>
